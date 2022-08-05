@@ -1,4 +1,6 @@
+import { Navigate, Route, Routes } from 'react-router'
 import Header from './components/Header'
+import { Home } from './Pages/Home'
 
 function App() {
   return (
@@ -7,7 +9,10 @@ function App() {
     
 
       <main>
-        {/* Create your routes here. Don't forget to install the router package! */}
+        <Routes>
+        <Route index element={<Navigate to="/products" />} />
+          <Route path="/products" element={<Home />} />
+        </Routes>
       </main>
     </>
   )
